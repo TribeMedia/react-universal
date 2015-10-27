@@ -1,0 +1,18 @@
+{
+  "name": "@acme/core",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Stand-alone core package",
+  "scripts": {
+    "test": "echo Running tests on core"
+  },
+  "dependencies": {
+    "redux": "^3.0.4",
+    "redux-promise-middleware": "^2.0.0",
+    "intl-messageformat": "^1.1.0",
+    "lodash.mapvalues": "^3.0.1",
+    "lodash.transform": "^3.0.4",
+    "react-addons-shallow-compare": "^0.14.1",
+    "react": "^0.14.1"
+  }
+}
