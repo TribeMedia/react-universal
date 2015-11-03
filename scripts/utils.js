@@ -10,7 +10,7 @@ export function getDiff(sha1) {
 export function extractFolderNames(paths) {
   return paths
     .map(loc => path.dirname(loc))
-    .filter(loc => loc === 'core' || loc.indexOf('platforms') === 0);
+    .filter(loc => loc.indexOf('core') === 0 || loc.indexOf('platforms') === 0);
 }
 
 export function runInFolder(parent, folder, cmd) {

@@ -4,7 +4,9 @@ import testAll from './test-all';
 export default function main({rootPath, sha1}) {
   const foldersToTest = utils.dedupe(utils.extractFolderNames(utils.getDiff(sha1)));
 
-  if (foldersToTest.indexOf('core') >= 0) {
+  const affectsAllPlatforms = foldersToTest.filter(loc => loc.indexOf('core') === 0).length > 0;
+
+  if (affectsAllPlatforms) {
     return testAll({rootPath});
   }
 
