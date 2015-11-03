@@ -25,13 +25,13 @@ This proposal is highly influenced by the work done in both React & React Native
 
 I would like to thank the whole React & Native community, especially:
 - Daniel Steigerwald (@steida) for all the work we've done in @este/common - it's been a great journey that made this proposal possible
-- Andre Staltz (@staltz) for all the reactive functional talks, especially about human-computer interaction that were the main inspiration and motiviation behind grouping different targets into one place
+- Andre Staltz (@staltz) for all the reactive functional talks, especially about human-computer interaction that were the main inspiration and motivation behind grouping different targets into one place
 - Brent Vatne (@notbrent) for all the help with reducing the gap between web & native
 - James Ide (@JI) for being a community patron, tremendous help with React Native releases and making it a better environment for all of us
 
 ## Similar solutions
 
-This package is heavily based on `este/este` project, with an exception that here dependencies are not defined in a single `package.json` for the sake of development and to utilise some more advanced CI patterns. If you prefer having a single source of dependencies as your app is not growing yet - give it a go.
+This package is heavily based on `este/este` project, with an exception that here dependencies are not defined in a single `package.json` for the sake of development and to utilize some more advanced CI patterns. If you prefer having a single source of dependencies as your app is not growing yet - give it a go.
 
 ## License
 

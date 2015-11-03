@@ -13,7 +13,7 @@ For all platform-specific commands, check `package.json`'s in `platforms/<target
 $ npm run packages:check
 ```
 
-Checks all dependencies in your `package.json` against latest published versions. 
+Checks all dependencies in your `package.json` against latest published versions.
 
 ## packages:update
 
@@ -50,7 +50,7 @@ Takes list of all folders that have changed since last commit and runs tests in 
 to ensure no side-effects were introduced. No tests will be run for changes in `scripts` folder since we don't have
 unit tests in there anyway. Works with `CircleCI`.
 
-This is default `npm test` behaviour. 
+This is default `npm test` behavior. 
 
 ## test:all
 
@@ -60,4 +60,3 @@ $ npm run test:all
 
 Tests all targets and core package no matter what files were changed. Useful to run prior release to make sure
 all works as expected.
-
