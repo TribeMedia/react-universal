@@ -4,6 +4,8 @@
 import path from 'path';
 import express from 'express';
 
+const PORT = process.env.PORT || 3000;
+
 const app = express();
 
 if (process.env.NODE_ENV !== 'production') {
@@ -17,17 +19,19 @@ if (process.env.NODE_ENV !== 'production') {
   }));
 
   app.use(require('webpack-hot-middleware')(compiler));
+} else {
+  app.use('/static', express.static(path.join(__dirname, '../dist')));
 }
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../index.html'));
 });
 
-app.listen(3000, 'localhost', (err) => {
+app.listen(PORT, 'localhost', (err) => {
   if (err) {
     console.log(err);
     return;
   }
 
-  console.log('Listening at http://localhost:3000');
+  console.log(`Listening at http://localhost:${PORT}`);
 });

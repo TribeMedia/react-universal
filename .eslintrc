@@ -2,7 +2,6 @@
   "parser": "babel-eslint",
   "rules": {
     "array-bracket-spacing": 2,
-    "brace-style": [2, "stroustrup", {"allowSingleLine": true}],
     "camelcase": 2,
     "comma-dangle": 0,
     "comma-spacing": [2, {"before": false, "after": true}],

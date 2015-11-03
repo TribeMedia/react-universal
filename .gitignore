@@ -35,4 +35,4 @@ npm-debug.log
 
 # Web
 #
-src/web/dist
+platforms/web/dist
