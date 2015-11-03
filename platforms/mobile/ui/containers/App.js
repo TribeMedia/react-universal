@@ -5,13 +5,10 @@ import cloneReferencedElement from 'react-native-clone-referenced-element';
 import router from '../router';
 
 // Load actions
-import * as todos from '../../../../core/redux/todos/actions';
-import * as intl from '../../../../core/redux/intl/actions';
 import * as device from '../../redux/device/actions';
 
 // Core method makeActions
-// See its description, reduces boilerplate
-import bindActionsToDispatch from '../../../../core/utils/bindActionsToDispatch';
+import bindActionsToDispatch from '../../../../core/redux/bindActionsToDispatch';
 
 function mapStateToProps(state) {
   return {
@@ -20,7 +17,7 @@ function mapStateToProps(state) {
   };
 }
 
-const mapDispatchToProps = bindActionsToDispatch({todos, intl, device});
+const mapDispatchToProps = bindActionsToDispatch({device});
 
 @connect(mapStateToProps, mapDispatchToProps)
 export default class App extends React.Component {
