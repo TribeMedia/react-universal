@@ -6,7 +6,7 @@ import testDiffOnly from './test-diff-only';
 import checkUpdates from './check-updates';
 import install from './install';
 
-const sha1 = '32d3ae4'
+const sha1 = process.env.CIRCLE_SHA1 || 'HEAD';
 const rootPath = process.cwd();
 
 target.testDiffOnly = () => {
