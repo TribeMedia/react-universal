@@ -20,7 +20,7 @@ function onlyFunctions(actions) {
 //   todos: {addTodo: function() {}}
 // }
 // call it this.props.actions.todos.addTodo();
-export default function bindActionsToDispatch(features) {
+export default function bindActionsToDispatch(features = {}) {
   const actionsToBind = {todos, intl, ...features};
   return dispatch => ({
     actions: mapValues(actionsToBind, actions => bindActionCreators(onlyFunctions(actions), dispatch))
