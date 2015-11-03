@@ -9,17 +9,9 @@ import * as device from '../../redux/device/actions';
 
 // Core method makeActions
 import bindActionsToDispatch from '../../../../core/redux/bindActionsToDispatch';
+import mapStateToProps from '../../../../core/redux/mapStateToProps';
 
-function mapStateToProps(state) {
-  return {
-    ...state,
-    msg: state.intl.msg
-  };
-}
-
-const mapDispatchToProps = bindActionsToDispatch({device});
-
-@connect(mapStateToProps, mapDispatchToProps)
+@connect(mapStateToProps, bindActionsToDispatch({device}))
 export default class App extends React.Component {
 
   augmentScene(scene) {
