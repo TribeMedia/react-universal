@@ -11,7 +11,7 @@ export default function intlReducer(state = initialState, action) {
   switch (action.type) {
 
     case SELECT_LANGUAGE: {
-      const {locale} = action;
+      const {locale} = action.payload;
       if (state.availableLanguages.indexOf(locale) === -1) {
         return state;
       }

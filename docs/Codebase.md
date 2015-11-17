@@ -8,7 +8,7 @@ Each application should be made of multiple independent packages, including the 
 
 > **Note on `npm link`**
 
-> Symlinks are considered anti-pattern at the time of writing, since `react-packager` does not respect them (well, technically speaking it's an issue with `watchman`, being discussed already). Use explicit relative require or webpack config to mimick that functionallity.
+> Symlinks are considered anti-pattern at the time of writing, since `react-packager` does not respect them (well, technically speaking it's an issue with `watchman`, being discussed already). Use explicit relative require or webpack config to mimick that functionality.
 
 ### Target
 
@@ -28,19 +28,17 @@ Optionally, all your targets as well as core package should be wrapped in a umbr
 
 > **Note on `Webpack`**
 
-> Although Webpack is used by `web` platform exclusively, it has been put in the top-level folder along the `babel-loader` package to avoid issues with `core` folder being preprocessed with babel. 
+> Although Webpack is used by `web` platform exclusively, it has been put in the top-level folder along the `babel-loader` package to avoid issues with `core` folder being preprocessed with babel.
 
 ## Dependencies
 
 Our application, just like twelve-factor one, does not rely on implicit existence of system-wide packages. That means all dependencies should be declared via a dependency declaration manifest.
 
 There are a couple of benefits of explicit dependency declaration, including:
-- Easier and clearer overview of needed packages to build and run given target. 
+- Easier and clearer overview of needed packages to build and run given target.
 - Greatly reduced effort needed by the developer to jump into the project by requiring only the language runtime and dependency manager to be installed prior starting the work
 - Faster deployments by reducing number of targets to install, build & test when different build pipelines are utilized
 
 Another highly important factor to take into consideration is development of platform-dependent targets - say `React Native iOS` application. It's often the case that your entire team works on different systems, like Windows or Linux just to name few. When one of your targets depend on system-exclusive tooling, like `XCode` shell available on `OS X`, it may result in errors and warnings about unsupported platform during package installation.
 
 By making targets truly isolated and independent, your codebase is guaranteed to work on all platforms possible and be multiple-teams friendly.
- 
-

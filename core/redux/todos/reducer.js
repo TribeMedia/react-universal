@@ -9,31 +9,39 @@ const initialState = [{
 export default function todos(state = initialState, action) {
   switch (action.type) {
 
-    case actions.ADD_TODO:
+    case actions.ADD_TODO: {
+      const {text} = action.payload;
       return [{
         id: state.reduce((maxId, todo) => Math.max(todo.id, maxId), -1) + 1,
         completed: false,
-        text: action.text
+        text
       }, ...state];
+    }
 
-    case actions.DELETE_TODO:
+    case actions.DELETE_TODO: {
+      const {id} = action.payload;
       return state.filter(todo =>
-        todo.id !== action.id
+        todo.id !== id
       );
+    }
 
-    case actions.EDIT_TODO:
+    case actions.EDIT_TODO: {
+      const {id, text} = action.payload;
       return state.map(todo =>
-        todo.id === action.id ?
-          Object.assign({}, todo, {text: action.text}) :
+        todo.id === id ?
+          Object.assign({}, todo, {text}) :
           todo
       );
+    }
 
-    case actions.COMPLETE_TODO:
+    case actions.COMPLETE_TODO: {
+        const {id} = action.payload;
       return state.map(todo =>
-        todo.id === action.id ?
+        todo.id === id ?
           Object.assign({}, todo, {completed: !todo.completed}) :
           todo
       );
+    }
 
     case actions.COMPLETE_ALL:
       const areAllMarked = state.every(todo => todo.completed);
